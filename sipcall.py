@@ -19,6 +19,7 @@ country_code = '+1'
 sip = AMIClient(address=astsrv, port=port)
 sip.login(username=username, secret=password)
 
+
 def normalize(dst):
     # Normalize Destination number remove non digit charachters
     # and remove Country code followed by '+'
@@ -27,7 +28,7 @@ def normalize(dst):
     dst = re.sub("[^0-9]", "", dst)
     return dst
 
-    
+
 def call_to(dst):
     call = SimpleAction(
         'Originate',
